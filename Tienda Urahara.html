@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Urahara</title>
+</head>
+<body>
+    <header>
+        <h1 id="titulo">Tienda Urahara</h1>
+    </header>
+    <hr>
+    <main> 
+        <form>
+            <div>
+                <label for="Buscador">Buscador</label>
+                <input type="text" id="Buscador" name="Buscador" placeholder="Buscador" />
+            </div>
+        </form>
+
+        <section>
+            <h2>Anuncios y novedades</h2> 
+            
+            <article>
+                <p>Establecimiento de <strong>Urahara Kisuke</strong>.</p>
+                <p>Todo lo importado tiene garantía, se aceptan devoluciones.</p>
+                <h3><span style="color:darkgreen">Fachada de la tienda</span></h3>
+                <img src="Multimedia Inicio/Fachada_UraharaShop.jpg" alt="Fachada exterior de la Tienda Urahara en Karakura" width="500">
+            </article>
+
+            <article>
+                <h3>Departamento:</h3>
+                <nav>
+                    <ul>
+                        <li><a href="Departamento/Tienda de alimentos.html">Tienda de alimentos</a></li>
+                        <li><a href="Departamento/Ropa y accesorios.html">Ropa y accesorios</a></li>
+                        <li><a href="Departamento/Bebés y niños.html">Bebes y niños</a></li>
+                        <li><a href="Departamento/Farmacia y cuidado personal.html">Farmacia y cuidado personal</a></li>
+                        <li><a href="Departamento/Hogar, jardín y herramientas.html">Hogar, jardín y herramientas</a></li>
+                        <li><a href="Departamento/Electrónica.html">Electrónica</a></li>
+                        <li><a href="Departamento/Videojuegos y películas.html">Videojuegos y películas</a></li>
+                        <li><a href="Departamento/Juguetes y coleccionables.html">Juguetes y coleccionables</a></li>
+                        <li><a href="Departamento/Arte, libros y música.html">Arte, libros y música</a></li>
+                    </ul>
+                </nav>
+            </article>
+
+            <article>
+                <h3>Servicios</h3>
+                <ul>
+                    <li><a href="Servicios/Tarjetas y membresías.html">Tarjetas y membresías</a></li>
+                    <li><a href="Servicios/Pagos de servicios.html">Pagos de servicios</a></li>
+                    <li><a href="Servicios/Consulta general de artículos 247.html">Consulta general de artículos 24/7</a></li>
+                    <li><a href="Servicios/Entrega a domicilio recogida en tienda.html">Entrega a domicilio/ recogida en tienda</a></li>
+                    <li><a href="Servicios/Instalación y soporte técnico.html">Instalación y soporte técnico</a></li>
+                </ul>
+
+                <h4>Sintoniza nuestra Radio Espiritual</h4>
+                <audio controls loop>
+                    <source src="Multimedia Inicio/Clavar La Espada.mp3" type="audio/mpeg">
+                </audio>
+            </article>
+
+            <article>
+                <h3>Sobre Nosotros</h3>
+                <p>Estamos ubicados en <strong>Karakura Town calle 12.</strong> (cerca de la zona residencial).</p>
+            </article>
+
+            <article>
+                <h3>Tabla de los trabajadores</h3>
+                <table style="border: 1px solid black; border-collapse: collapse; width: 20%;">
+                    <thead>
+                        <tr>
+                            <th style="padding: 7px; border: 1px solid black;">Puesto</th>
+                            <th style="padding: 7px; border: 1px solid black;">Nombre</th>
+                            <th style="padding: 7px; border: 1px solid black;">Apellido</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 7px; border: 1px solid black;">Gerente</td>
+                            <td style="padding: 7px; border: 1px solid black;">Kisuke</td>
+                            <td style="padding: 7px; border: 1px solid black;">Urahara</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 7px; border: 1px solid black;">Asistente principal</td>
+                            <td style="padding: 7px; border: 1px solid black;">Tessai</td>
+                            <td style="padding: 7px; border: 1px solid black;">Tsukabishi</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 7px; border: 1px solid black;">Ayudante</td>
+                            <td style="padding: 7px; border: 1px solid black;">Ururu</td>
+                            <td style="padding: 7px; border: 1px solid black;">Tsumugiya</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 7px; border: 1px solid black;">Ayudante/ encargado de limpieza</td>
+                            <td style="padding: 7px; border: 1px solid black;">Jinta</td>
+                            <td style="padding: 7px; border: 1px solid black;">Hankari</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section> 
+
+        <form action="/formulario" method="POST">
+            <div>
+                <label for="comentario">Comentario</label>
+                <br> <textarea cols="50" rows="10" id="comentario" placeholder="Ingrese comentario" name="comentario"></textarea>
+                <br>
+                <button type="reset">Reiniciar</button>
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+        <br>
+        <nav>
+            <a href="#titulo">Ir arriba</a> | 
+            <a target="_blank" href="https://www.walmart.com">Ir a Walmart</a>
+        </nav>
+    </main>
+
+    <footer> 
+        <p>© Todos los derechos reservados</p> 
+    </footer>
+</body>
+</html>
