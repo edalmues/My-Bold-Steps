@@ -4,37 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda Urahara</title>
+    <meta name="description" content="Tienda Urahara — establecimiento departamental en Karakura Town. Alimentos, ropa, electrónica, hogar y más.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="TiendaUrahara.css">
 </head>
 <body>
-    <header>
-        <h1 id="titulo">Tienda Urahara</h1>
+
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="encabezado">
+        <div class="encabezado__noren" aria-hidden="true"></div>
+        <div class="encabezado__contenido">
+            <div class="sello" aria-hidden="true">
+                <span>UK</span>
+            </div>
+            <h1 id="titulo">Tienda Urahara</h1>
+            <p class="encabezado__eslogan">Artículos para toda ocasión, espiritual o no</p>
+        </div>
     </header>
-    <hr>
-    <main> 
-        <form>
-            <div>
-                <label for="Buscador">Buscador</label>
-                <input type="text" id="Buscador" name="Buscador" placeholder="Buscador" />
+
+    <main id="contenido">
+
+        <form class="buscador" role="search">
+            <label for="Buscador">Buscador</label>
+            <div class="buscador__campo">
+                <input type="search" id="Buscador" name="Buscador" placeholder="¿Qué estás buscando hoy?" />
+                <button type="submit" aria-label="Buscar">Buscar</button>
             </div>
         </form>
 
-        <section>
-            <h2>Anuncios y novedades</h2> 
-            
-            <article>
+        <section class="anuncios" aria-labelledby="anuncios-titulo">
+            <h2 id="anuncios-titulo">Anuncios y novedades</h2>
+
+            <article class="tarjeta tarjeta--destacada">
                 <p>Establecimiento de <strong>Urahara Kisuke</strong>.</p>
-                <p>Todo lo importado tiene garantía, se aceptan devoluciones.</p>
-                <h3><span style="color:darkgreen">Fachada de la tienda</span></h3>
-                <img src="Multimedia Inicio/Fachada_UraharaShop.jpg" alt="Fachada exterior de la Tienda Urahara en Karakura" width="500">
+                <p>Todo lo importado tiene garantía; se aceptan devoluciones.</p>
+                <h3 class="tarjeta__subtitulo">Fachada de la tienda</h3>
+                <img
+                    src="Multimedia Inicio/Fachada_UraharaShop.jpg"
+                    alt="Fachada exterior de la Tienda Urahara en Karakura"
+                    width="500"
+                    height="333"
+                    loading="lazy"
+                    class="tarjeta__imagen"
+                >
             </article>
 
-            <article>
-                <h3>Departamento:</h3>
-                <nav>
-                    <ul>
+            <article class="tarjeta">
+                <h3>Departamentos</h3>
+                <nav aria-label="Departamentos de la tienda">
+                    <ul class="lista-departamentos">
                         <li><a href="Departamento/Tienda de alimentos.html">Tienda de alimentos</a></li>
                         <li><a href="Departamento/Ropa y accesorios.html">Ropa y accesorios</a></li>
-                        <li><a href="Departamento/Bebés y niños.html">Bebes y niños</a></li>
+                        <li><a href="Departamento/Bebés y niños.html">Bebés y niños</a></li>
                         <li><a href="Departamento/Farmacia y cuidado personal.html">Farmacia y cuidado personal</a></li>
                         <li><a href="Departamento/Hogar, jardín y herramientas.html">Hogar, jardín y herramientas</a></li>
                         <li><a href="Departamento/Electrónica.html">Electrónica</a></li>
@@ -45,81 +69,94 @@
                 </nav>
             </article>
 
-            <article>
+            <article class="tarjeta">
                 <h3>Servicios</h3>
-                <ul>
+                <ul class="lista-servicios">
                     <li><a href="Servicios/Tarjetas y membresías.html">Tarjetas y membresías</a></li>
                     <li><a href="Servicios/Pagos de servicios.html">Pagos de servicios</a></li>
                     <li><a href="Servicios/Consulta general de artículos 247.html">Consulta general de artículos 24/7</a></li>
-                    <li><a href="Servicios/Entrega a domicilio recogida en tienda.html">Entrega a domicilio/ recogida en tienda</a></li>
+                    <li><a href="Servicios/Entrega a domicilio recogida en tienda.html">Entrega a domicilio / recogida en tienda</a></li>
                     <li><a href="Servicios/Instalación y soporte técnico.html">Instalación y soporte técnico</a></li>
                 </ul>
 
-                <h4>Sintoniza nuestra Radio Espiritual</h4>
-                <audio controls loop>
-                    <source src="Multimedia Inicio/Clavar La Espada.mp3" type="audio/mpeg">
-                </audio>
+                <div class="radio">
+                    <h4>Sintoniza nuestra Radio Espiritual</h4>
+                    <audio controls loop>
+                        <source src="Multimedia Inicio/Clavar La Espada.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </div>
             </article>
 
-            <article>
-                <h3>Sobre Nosotros</h3>
-                <p>Estamos ubicados en <strong>Karakura Town calle 12.</strong> (cerca de la zona residencial).</p>
+            <article class="tarjeta">
+                <h3>Sobre nosotros</h3>
+                <p>Estamos ubicados en <strong>Karakura Town, calle 12</strong> (cerca de la zona residencial).</p>
             </article>
 
-            <article>
-                <h3>Tabla de los trabajadores</h3>
-                <table style="border: 1px solid black; border-collapse: collapse; width: 20%;">
-                    <thead>
-                        <tr>
-                            <th style="padding: 7px; border: 1px solid black;">Puesto</th>
-                            <th style="padding: 7px; border: 1px solid black;">Nombre</th>
-                            <th style="padding: 7px; border: 1px solid black;">Apellido</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td style="padding: 7px; border: 1px solid black;">Gerente</td>
-                            <td style="padding: 7px; border: 1px solid black;">Kisuke</td>
-                            <td style="padding: 7px; border: 1px solid black;">Urahara</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 7px; border: 1px solid black;">Asistente principal</td>
-                            <td style="padding: 7px; border: 1px solid black;">Tessai</td>
-                            <td style="padding: 7px; border: 1px solid black;">Tsukabishi</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 7px; border: 1px solid black;">Ayudante</td>
-                            <td style="padding: 7px; border: 1px solid black;">Ururu</td>
-                            <td style="padding: 7px; border: 1px solid black;">Tsumugiya</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 7px; border: 1px solid black;">Ayudante/ encargado de limpieza</td>
-                            <td style="padding: 7px; border: 1px solid black;">Jinta</td>
-                            <td style="padding: 7px; border: 1px solid black;">Hankari</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <article class="tarjeta tarjeta--tabla">
+                <h3>Equipo de la tienda</h3>
+                <div class="tabla-wrapper">
+                    <table class="tabla-personal">
+                        <caption class="visualmente-oculto">Listado del personal de la Tienda Urahara con su puesto, nombre y apellido</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Puesto</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Apellido</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Gerente</td>
+                                <td>Kisuke</td>
+                                <td>Urahara</td>
+                            </tr>
+                            <tr>
+                                <td>Asistente principal</td>
+                                <td>Tessai</td>
+                                <td>Tsukabishi</td>
+                            </tr>
+                            <tr>
+                                <td>Ayudante</td>
+                                <td>Ururu</td>
+                                <td>Tsumugiya</td>
+                            </tr>
+                            <tr>
+                                <td>Ayudante / encargado de limpieza</td>
+                                <td>Jinta</td>
+                                <td>Hankari</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </article>
-        </section> 
+        </section>
 
-        <form action="/formulario" method="POST">
-            <div>
+        <section class="contacto" aria-labelledby="contacto-titulo">
+            <h2 id="contacto-titulo">Déjanos tu comentario</h2>
+            <form class="formulario-comentario" action="/formulario" method="POST">
                 <label for="comentario">Comentario</label>
-                <br> <textarea cols="50" rows="10" id="comentario" placeholder="Ingrese comentario" name="comentario"></textarea>
-                <br>
-                <button type="reset">Reiniciar</button>
-                <button type="submit">Enviar</button>
-            </div>
-        </form>
-        <br>
-        <nav>
-            <a href="#titulo">Ir arriba</a> | 
-            <a target="_blank" href="https://www.walmart.com">Ir a Walmart</a>
+                <textarea cols="50" rows="8" id="comentario" placeholder="Ingrese su comentario" name="comentario"></textarea>
+                <div class="formulario-comentario__acciones">
+                    <button type="reset" class="boton boton--secundario">Reiniciar</button>
+                    <button type="submit" class="boton boton--primario">Enviar</button>
+                </div>
+            </form>
+        </section>
+
+        <nav class="enlaces-pie" aria-label="Enlaces de navegación adicionales">
+            <a href="#titulo">Ir arriba</a>
+            <span aria-hidden="true">|</span>
+            <a target="_blank" rel="noopener noreferrer" href="https://www.walmart.com">Ir a Walmart</a>
         </nav>
     </main>
 
-    <footer> 
-        <p>© Todos los derechos reservados</p> 
+    <footer class="pie">
+        <p>&copy; <span id="anio"></span> Tienda Urahara. Todos los derechos reservados.</p>
+        <script>
+            document.getElementById('anio').textContent = new Date().getFullYear();
+        </script>
     </footer>
+
 </body>
 </html>

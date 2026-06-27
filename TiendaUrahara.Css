@@ -1,0 +1,457 @@
+/* =========================================================
+   TIENDA URAHARA — hoja de estilos
+   Paleta inspirada en la tienda de Urahara Kisuke (Bleach):
+   verde tienda nocturna, beige papel washi, rojo bermellón
+   del abanico, dorado kido. Tono: comercial y serio.
+   ========================================================= */
+
+:root {
+    /* Paleta */
+    --color-verde-oscuro: #1c2b22;
+    --color-verde-bosque: #2f4d3a;
+    --color-verde-bosque-hover: #3c6049;
+    --color-beige: #f4ede1;
+    --color-beige-claro: #faf6ee;
+    --color-bermellon: #a13d34;
+    --color-bermellon-hover: #8a322a;
+    --color-dorado: #c9a86a;
+    --color-dorado-suave: #e3d3ab;
+    --color-tinta: #2b2420;
+    --color-tinta-suave: #5c5246;
+    --color-borde: #d8c7a3;
+
+    /* Tipografía */
+    --fuente-display: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+    --fuente-cuerpo: "Noto Sans", "Segoe UI", system-ui, sans-serif;
+
+    /* Espaciado / forma */
+    --radio: 4px;
+    --sombra-suave: 0 2px 8px rgba(28, 43, 34, 0.12);
+    --sombra-media: 0 6px 18px rgba(28, 43, 34, 0.16);
+    --ancho-contenido: 1080px;
+}
+
+/* ---------- Reset básico ---------- */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--color-beige);
+    color: var(--color-tinta);
+    font-family: var(--fuente-cuerpo);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: var(--color-bermellon);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--color-dorado);
+    outline-offset: 2px;
+}
+
+.visualmente-oculto {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    background: var(--color-bermellon);
+    color: #fff;
+    padding: 0.6rem 1rem;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    left: 0;
+}
+
+/* ---------- Encabezado ---------- */
+.encabezado {
+    background-color: var(--color-verde-oscuro);
+    color: var(--color-beige-claro);
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+/* Franja decorativa tipo "noren" (cortina de tienda japonesa) */
+.encabezado__noren {
+    height: 14px;
+    width: 100%;
+    background-image: linear-gradient(135deg, var(--color-dorado) 25%, transparent 25%),
+                       linear-gradient(225deg, var(--color-dorado) 25%, transparent 25%);
+    background-size: 20px 14px;
+    background-position: 0 0;
+    opacity: 0.9;
+}
+
+.encabezado__contenido {
+    max-width: var(--ancho-contenido);
+    margin: 0 auto;
+    padding: 1.75rem 1.5rem 0;
+    text-align: center;
+}
+
+.sello {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 0.75rem;
+    border: 2px solid var(--color-dorado);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--fuente-display);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-dorado);
+    letter-spacing: 1px;
+}
+
+.encabezado h1 {
+    font-family: var(--fuente-display);
+    font-weight: 700;
+    font-size: clamp(1.9rem, 4vw, 2.75rem);
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.encabezado__eslogan {
+    margin: 0.4rem 0 0;
+    color: var(--color-dorado-suave);
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+/* ---------- Layout general ---------- */
+main {
+    max-width: var(--ancho-contenido);
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+}
+
+h2 {
+    font-family: var(--fuente-display);
+    font-size: 1.6rem;
+    color: var(--color-verde-oscuro);
+    border-bottom: 2px solid var(--color-dorado);
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+h3 {
+    font-family: var(--fuente-display);
+    color: var(--color-verde-bosque);
+    margin-top: 0;
+}
+
+/* ---------- Buscador ---------- */
+.buscador {
+    margin-bottom: 2rem;
+}
+
+.buscador label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--color-verde-oscuro);
+}
+
+.buscador__campo {
+    display: flex;
+    max-width: 480px;
+}
+
+.buscador__campo input {
+    flex: 1;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio) 0 0 var(--radio);
+    font-family: var(--fuente-cuerpo);
+    font-size: 1rem;
+    background-color: var(--color-beige-claro);
+    color: var(--color-tinta);
+}
+
+.buscador__campo input::placeholder {
+    color: var(--color-tinta-suave);
+}
+
+.buscador__campo button {
+    padding: 0 1.1rem;
+    border: 1px solid var(--color-verde-bosque);
+    background-color: var(--color-verde-bosque);
+    color: #fff;
+    border-radius: 0 var(--radio) var(--radio) 0;
+    cursor: pointer;
+    font-family: var(--fuente-cuerpo);
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.buscador__campo button:hover {
+    background-color: var(--color-verde-bosque-hover);
+}
+
+/* ---------- Tarjetas / artículos ---------- */
+.anuncios {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.tarjeta {
+    background-color: var(--color-beige-claro);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    padding: 1.5rem;
+    box-shadow: var(--sombra-suave);
+}
+
+.tarjeta--destacada {
+    border-left: 4px solid var(--color-bermellon);
+}
+
+.tarjeta__subtitulo {
+    font-size: 1rem;
+    font-family: var(--fuente-cuerpo);
+    font-weight: 600;
+    color: var(--color-verde-bosque);
+    margin-bottom: 0.6rem;
+}
+
+.tarjeta__imagen {
+    border-radius: var(--radio);
+    border: 1px solid var(--color-borde);
+}
+
+/* Listas de departamentos y servicios */
+.lista-departamentos,
+.lista-servicios {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.lista-departamentos {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.lista-departamentos li a,
+.lista-servicios li a {
+    display: block;
+    padding: 0.6rem 0.9rem;
+    background-color: var(--color-beige);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    color: var(--color-tinta);
+    font-weight: 500;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.lista-departamentos li a:hover,
+.lista-servicios li a:hover {
+    background-color: var(--color-verde-bosque);
+    border-color: var(--color-verde-bosque);
+    color: #fff;
+    text-decoration: none;
+    transform: translateX(2px);
+}
+
+/* Radio espiritual */
+.radio {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px dashed var(--color-borde);
+}
+
+.radio h4 {
+    margin: 0 0 0.6rem;
+    color: var(--color-bermellon);
+    font-size: 0.95rem;
+}
+
+.radio audio {
+    width: 100%;
+    max-width: 360px;
+}
+
+/* ---------- Tabla de personal ---------- */
+.tabla-wrapper {
+    overflow-x: auto;
+}
+
+.tabla-personal {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 420px;
+}
+
+.tabla-personal th,
+.tabla-personal td {
+    padding: 0.7rem 0.9rem;
+    border: 1px solid var(--color-borde);
+    text-align: left;
+}
+
+.tabla-personal thead th {
+    background-color: var(--color-verde-oscuro);
+    color: var(--color-beige-claro);
+    font-family: var(--fuente-display);
+    font-weight: 600;
+}
+
+.tabla-personal tbody tr:nth-child(even) {
+    background-color: var(--color-beige);
+}
+
+.tabla-personal tbody tr:hover {
+    background-color: var(--color-dorado-suave);
+}
+
+/* ---------- Sección de contacto / formulario ---------- */
+.contacto {
+    margin-top: 2.5rem;
+}
+
+.formulario-comentario {
+    background-color: var(--color-beige-claro);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 600px;
+    box-shadow: var(--sombra-suave);
+}
+
+.formulario-comentario label {
+    font-weight: 600;
+    color: var(--color-verde-oscuro);
+}
+
+.formulario-comentario textarea {
+    font-family: var(--fuente-cuerpo);
+    font-size: 1rem;
+    padding: 0.75rem;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    background-color: var(--color-beige);
+    color: var(--color-tinta);
+    resize: vertical;
+}
+
+.formulario-comentario__acciones {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.boton {
+    padding: 0.6rem 1.3rem;
+    border-radius: var(--radio);
+    font-family: var(--fuente-cuerpo);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.boton--primario {
+    background-color: var(--color-bermellon);
+    color: #fff;
+}
+
+.boton--primario:hover {
+    background-color: var(--color-bermellon-hover);
+}
+
+.boton--secundario {
+    background-color: transparent;
+    color: var(--color-verde-bosque);
+    border-color: var(--color-verde-bosque);
+}
+
+.boton--secundario:hover {
+    background-color: var(--color-verde-bosque);
+    color: #fff;
+}
+
+/* ---------- Enlaces de pie de página ---------- */
+.enlaces-pie {
+    margin-top: 2.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--color-tinta-suave);
+}
+
+.enlaces-pie a {
+    color: var(--color-verde-bosque);
+    font-weight: 600;
+}
+
+/* ---------- Footer ---------- */
+.pie {
+    background-color: var(--color-verde-oscuro);
+    color: var(--color-dorado-suave);
+    text-align: center;
+    padding: 1.25rem 1rem;
+    font-size: 0.85rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+    .buscador__campo {
+        max-width: 100%;
+    }
+
+    .formulario-comentario__acciones {
+        flex-direction: column;
+    }
+
+    .boton {
+        width: 100%;
+    }
+
+    .encabezado h1 {
+        font-size: 1.6rem;
+    }
+}
+
+/* ---------- Reducción de movimiento ---------- */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
